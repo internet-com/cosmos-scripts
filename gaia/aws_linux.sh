@@ -20,7 +20,7 @@ exec 2>&1
 yum update -y
 
 # Install dependencies
-yum install -y git awslogs
+yum install -y git awslogs jq
 
 # Configure awslogs to use our region
 echo "[plugins]
@@ -74,8 +74,6 @@ if [ -n "$MONIKER" ]; then
 else
   echo "Moniker is NOT specified. A generated default will be used."
 fi
-
-
 
 # Create gaia-daemon user and set permissions
 useradd --system --shell /usr/sbin/nologin gaia-daemon
